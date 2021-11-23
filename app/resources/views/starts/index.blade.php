@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>{{ config('app.name') }} | ログインページ</title>
+    <title>{{ config('app.name') }} | 利用開始ページ</title>
 
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -33,76 +33,32 @@
 </head>
 <body class="hold-transition login-page">
 <div><a href="{{ route('home') }}" class="text-center">ホームに戻る</a></div>
-<div class="login-box">
-    <div class="login-logo"><b>ログイン</b></div>
 
-    <!-- /.login-logo -->
 
-    <!-- /.login-box-body -->
-    <div class="card">
-        <div class="card-body login-card-body">
-            <p class="login-box-msg">会員情報を入力してログイン</p>
 
-            <form method="post" action="{{ url('/login') }}">
-                @csrf
+<div class="start-box">
 
-                <div class="input-group mb-3">
-                    <input type="email"
-                           name="email"
-                           value="{{ old('email') }}"
-                           placeholder="メールアドレス"
-                           class="form-control @error('email') is-invalid @enderror">
-                    <div class="input-group-append">
-                        <div class="input-group-text"><span class="fas fa-envelope"></span></div>
-                    </div>
-                    @error('email')
-                    <span class="error invalid-feedback">{{ $message }}</span>
-                    @enderror
-                </div>
-
-                <div class="input-group mb-3">
-                    <input type="password"
-                           name="password"
-                           placeholder="パスワード"
-                           class="form-control @error('password') is-invalid @enderror">
-                    <div class="input-group-append">
-                        <div class="input-group-text">
-                            <span class="fas fa-lock"></span>
-                        </div>
-                    </div>
-                    @error('password')
-                    <span class="error invalid-feedback">{{ $message }}</span>
-                    @enderror
-
-                </div>
-
-                <div class="row">
-                    <div class="col-8">
-                        <div class="icheck-primary">
-                            <input type="checkbox" id="remember">
-                            <label for="remember">入力状態を保存する</label>
-                        </div>
-                    </div>
-
-                    <div class="col-4">
-                        <button type="submit" class="btn btn-primary btn-block">ログイン</button>
-                    </div>
-
-                </div>
-            </form>
-
-            <p class="mb-1">
-                <a href="{{ route('password.request') }}">パスワードを忘れた方はこちら</a>
-            </p>
-            <p class="mb-0">
-                <a href="{{ route('register') }}" class="text-center">新規会員登録</a>
-            </p>
+    <!-- /.login-box -->
+    <div class="login-box">
+        <div class="col-4">
+            <input type="button" onclick=location.href="{{ url('/login') }}" value="会員の方はこちら（ログイン）">
         </div>
-        <!-- /.login-card-body -->
+        <!-- /.login-logo -->
+        <div class="col-4">
+            <input type="button" onclick=location.href="{{ url('/register') }}" value="会意登録して使う">
+        </div>
+
+        <div class="col-4">
+            <input type="button" onclick=location.href="{{ url('/register') }}" value="会意登録せずに使う">
+        </div>
+
     </div>
 
+
 </div>
-<!-- /.login-box -->
+
+
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
         integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="

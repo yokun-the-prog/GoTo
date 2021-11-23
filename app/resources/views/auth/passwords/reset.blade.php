@@ -32,6 +32,11 @@
 
 </head>
 <body class="hold-transition login-page">
+
+<div><a href="{{ route('home') }}" class="text-center">ホームに戻る</a></div>
+
+
+
 <div class="login-box">
     <div class="login-logo">
         <a href="{{ url('/home') }}"><b>{{ config('app.name') }}</b></a>

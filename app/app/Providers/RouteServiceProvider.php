@@ -18,6 +18,7 @@ class RouteServiceProvider extends ServiceProvider
      * @var string
      */
     public const HOME = '/home';
+    public const TRIP = '/trip';
 
     /**
      * The controller namespace for the application.
@@ -35,7 +36,7 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->configureRateLimiting();
+        $this->confi1gureRateLimiting();
 
         $this->routes(function () {
             Route::prefix('api')
